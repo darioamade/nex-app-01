@@ -17,10 +17,19 @@ const reviewRouter = require('./routes/reviewRouter');
 const bookingRouter = require('./routes/bookingRoutes');
 const menRouter = require('./routes/menRouters');
 const viewRouter = require('./routes/viewRoutes');
-
+const urix = require("urix")
 // app express
 const app = express();
 
+
+
+// On Windows:
+urix("c:\\users\\you\\foo")
+// /users/you/foo
+
+// On unix-like systems:
+urix("c:\\users\\you\\foo")
+// c:\users\you\foo
 app.enable('trust proxy');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
